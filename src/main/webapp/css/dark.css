@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/* dark.css - Giao diện tối cho PhoneStore */
+
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+header {
+  background-color: #1f1f1f;
+  color: #fff;
+}
+
+nav {
+  background-color: #232323;
+}
+
+nav a,
+nav button {
+  background: none;
+  color: #fff;
+}
+
+nav a:hover,
+nav button:hover {
+  background-color: #333;
+}
+
+.product-card,
+.form-container {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+}
+
+.product-info h3,
+.breadcrumb a {
+  color: #90caf9;
+}
+
+.btn,
+button {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+.btn:hover,
+button:hover {
+  background-color: #1565c0;
+}
+
+input,
+textarea,
+select {
+  background-color: #2a2a2a;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+footer {
+  background-color: #1a1a1a;
+  color: #aaa;
+}
+
+.success-message {
+  background-color: #2e7d32;
+  color: #c8e6c9;
+}
+
+.error-message {
+  background-color: #c62828;
+  color: #ffebee;
+}
+
+.admin-table th {
+  background-color: #263238;
+}
+
+.admin-table td,
+.admin-table th {
+  color: #eee;
+  border: 1px solid #444;
+}
+
+.admin-table tr:nth-child(even) {
+  background-color: #1b1b1b;
+}
