@@ -19,7 +19,7 @@
     
     <nav>
         <a href="admin">Quản lý sản phẩm</a>
-        <a href="addProduct.jsp">Thêm sản phẩm</a>
+        <a href="add">Thêm sản phẩm</a>
         <a href="product">Xem website</a>
         <a href="logout">Đăng xuất</a>
     </nav>
@@ -46,7 +46,7 @@
         <% } %>
         
         <div class="admin-actions">
-            <a href="addProduct.jsp" class="btn btn-primary">➕ Thêm sản phẩm mới</a>
+            <a href="add" class="btn btn-primary">➕ Thêm sản phẩm mới</a>
         </div>
         <h3 class="product-list-title">Danh sách sản phẩm</h3>
         <div class="admin-table-wrapper">

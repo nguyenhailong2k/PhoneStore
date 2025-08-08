@@ -23,9 +23,17 @@ public class AddProductServlet extends HttpServlet {
         brandDAO = new BrandDAO();
     }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse res)
+            throws ServletException, IOException {
+        // Hiển thị form thêm sản phẩm
+        RequestDispatcher dispatcher = req.getRequestDispatcher("addProduct.jsp");
+        dispatcher.forward(req, res);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse res)
             throws ServletException, IOException {
-
         try {
             String name = req.getParameter("name");
             double price = Double.parseDouble(req.getParameter("price"));
