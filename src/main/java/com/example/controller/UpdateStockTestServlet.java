@@ -9,38 +9,40 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.example.dao.ProductDAO;
 
-
-
 /**
- * Servlet implementation class UpdateStockTestServlet
+ * Servlet test để kiểm tra việc cập nhật số lượng tồn kho (stock) cho sản phẩm.
+ * Chạy servlet này sẽ cập nhật tồn kho của sản phẩm có ID = 1 về số lượng 77.
+ * 
+ * URL mapping: /test-stock
  */
 @WebServlet("/test-stock")
 public class UpdateStockTestServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Constructor mặc định.
      */
     public UpdateStockTestServlet() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+    /**
+     * Xử lý yêu cầu HTTP GET.
+     * - Gọi DAO để cập nhật số lượng tồn kho của sản phẩm có ID = 1 về 77.
+     * - In ra kết quả thành công hoặc thất bại trên trình duyệt.
+     */
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        ProductDAO dao = new ProductDAO();
-        boolean success = dao.updateStock(1, 77); // ép update sản phẩm ID 1 về tồn kho 77
-        resp.getWriter().println(success ? "✅ OK" : "❌ FAIL");
+        ProductDAO dao = new ProductDAO();              // Khởi tạo DAO để thao tác với CSDL
+        boolean success = dao.updateStock(1, 77);       // Ép cập nhật tồn kho của sản phẩm ID = 1 thành 77
+        resp.getWriter().println(success ? "✅ OK" : "❌ FAIL");  // In ra kết quả cập nhật
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
+    /**
+     * Xử lý yêu cầu HTTP POST.
+     * - Ở đây, POST được xử lý giống như GET bằng cách gọi lại doGet().
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        doGet(request, response);
+    }
 }
